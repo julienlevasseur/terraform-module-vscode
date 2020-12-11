@@ -36,3 +36,14 @@ resource "null_resource" "vscode_extension" {
         interpreter = var.default_interpreter
     }
 }
+
+resource "null_resource" "meslo_fonts" {
+    provisioner "file" {
+        source = "https://github.com/powerline/fonts/raw/master/Meslo%20Slashed/Meslo%20LG%20S%20Regular%20for%20Powerline.ttf"
+        destination = "/Library/Fonts/Meslo LG S Regular for Powerline.ttf"
+
+        connection {
+            host = "127.0.0.1"
+        }
+    }
+}
